@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+
+    <style name="AnimationActivity" mce_bogus="1" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/back_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/back_exit</item>
+    </style>
+
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_start</item>
+        <item name="colorPrimaryDark">@color/color_start</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+
+
+    <style name="AppThemeTwo" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@mipmap/loading</item>
+        <item name="colorPrimary">@color/color_start</item>
+        <item name="colorPrimaryDark">@color/color_start</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+    <!-- 是否顯示密碼-->
+    <style name="CheckBoxPwd" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/pwd_style</item>
+    </style>
+    <!-- 是否保存密碼-->
+    <style name="CheckBoxSavePwd" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/save_pwd_style</item>
+    </style>
+
+    <!-- 分享-->
+    <style name="transparentFrameWindowStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@drawable/photo_choose_bg</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowAnimationStyle">@style/main_menu_animstyle</item>
+    </style>
+
+
+    <style name="main_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
+    </style>
+    <!--分享-->
+    <declare-styleable name="cycleslip_attrs">
+        <attr name="time" format="integer" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\Android\SDK\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\support-annotations-24.2.0_13af9377042d0e71ba1ffb056e85c54740d6a7ea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-support-compat-24.2.0_6610f4ee467ccf1e23e9058328f58eeae53895ec\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\ShareSDK-QQ-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="29912ffbfb3efc301ea8c00fe0b0a54818983c3d">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\ShareSDK-QQ-2.7.9_b850ba7c1760f0638ccbcf191e32ab966ac8f68f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\incremental-classes\baidu\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1a166daf08495dce032390bc6e1b254b3091f48f">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\instant-run-bootstrap_f98301086700ac086eddbac6fd00047513cccb83\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\library-2.4.0_9406a3b1b72ef93fa78a67bfa4c650dce557300d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\ShareSDK-Wechat-Core-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="161e0d4f694f07ace2cc6e2fb8b5f3d988fdcb1e">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\ShareSDK-Wechat-Core-2.7.9_7314baf322d842e1f847810243f5878d249dd06d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-support-fragment-24.2.0_af2f75639f65a838f221637088abccdd6b3c278e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\internal_impl-24.2.0_5584c0d40262b9bdd8e515cb09ea021aecc10de0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\ShareSDK-Wechat-Moments-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="605bc07df42ac4faf1b17eef58bf47e5fe6ae43d">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\ShareSDK-Wechat-Moments-2.7.9_c6b7fa54230a4b1dccd239ed7ebd7bf75b2eeb31\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-support-core-ui-24.2.0_f3dc39920499698c639d5a128aaedc6922ebb726\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.github.chrisbanes\PhotoView\1.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="81d41e53c215976ce172b9f61ef1e8fc2d67cf79">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.github.chrisbanes-PhotoView-1.3.0_a78cefef2c7b0d17b5fee531c369fb54a8051db7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\io.reactivex-rxandroid-1.1.0_e3d02dce1c62d6e4edf85cb5ca5c4308a097c096\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\eventbus-3.0.0_830d1b83ca8c2e5bd671528c9fb27f45c5cb9c8a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava\2.0.2\a60c039ba54c73d1133b72178e1b04133c73d13d\adapter-rxjava-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a60c039ba54c73d1133b72178e1b04133c73d13d">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\adapter-rxjava-2.0.2_7d298cf23e9b7d6af4ff64372fd45bf501a60db0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.qiniu\qiniu-android-sdk\7.2.3\613bb7ccae6436345e3583cfab295d888b79f558\qiniu-android-sdk-7.2.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="613bb7ccae6436345e3583cfab295d888b79f558">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\qiniu-android-sdk-7.2.3_0642a449cbad3eea303b8713b438ff18aa75e9de\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.1\b494968f6050d494de55dc3ce005e59c7eb40012\rxjava-1.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b494968f6050d494de55dc3ce005e59c7eb40012">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\rxjava-1.1.1_8c9008f7190ce6934cf0d70fd9ff3893b8ef3210\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.0_b2ce5caee9fd48bfcda6642e482a9a1ed651a4ec\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.blankj\utilcode\1.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="096355ce590f1b424dcee88e22ca305ce71f994a">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.blankj-utilcode-1.3.0_3c0a3bc1ecff976e45774e8b0da80d9c44dc250d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.github.q1104133609\pay\4.0\jars\libs\alipaySingle-20160516.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c1aa1dcce4bd7b5e8464ddc608bce248c5c68805">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\alipaySingle-20160516_93a11678efceb9034554e5ee26bd538f9a25671b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\internal_impl-24.2.0_80afb8dfba24b05f4c6fb5ce1d145f571b11e44c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.github.q1104133609\pay\4.0\jars\libs\org.apache.http.legacy.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7ee5f292258d173f96cbe1f3b70153653d048eae">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\org.apache.http.legacy_98e5ab7339f5164c5812fdb905ac1477dbe7f211\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\okio-1.6.0_70e5562d02313a816a79044715904a5ad79aa56d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\retrofit-2.0.2_be4b7b7195c36d138b224491e35c344e830cba4d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-support-core-utils-24.2.0_34193864b885ef7ff964dac93ea6082703889c49\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\cn.yipianfengye.android\zxing-library\2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="dd36c47a742baf8f87914dcd44242543885de3d7">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\cn.yipianfengye.android-zxing-library-2.0_0b14e42107b1d3e5bbb36f3fc3ebc53b54cc9aa8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\gson-2.6.1_0fc2051f9f2971a1bfbf0813c519eeddaa1e38c5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-design-24.2.0_fe9a1e6238cf1635edee7ed4a65ff86235b7cc43\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\YimaoMiao\easeui\unspecified\jars\libs\glide-3.6.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="015a639bd9933f4f812be8bede14f14bd1bdea8b">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\8\glide-3.6.1_1bce595915916b3a7f63772d60958b63135b2dae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\ShareSDK-QZone-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e34c1d3580a2559e19f32ac0df82f4e86ae58aa2">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\ShareSDK-QZone-2.7.9_80806d1088d6650f2cf9e292fe400867443f472c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\internal_impl-24.2.0_cd6af3f8f001fdd2d34fd66f8e54483caa73eec0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\ShareSDK-ShortMessage-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ae6b6037cec513fb84b2b748182948cf7805ae88">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\ShareSDK-ShortMessage-2.7.9_38776fcd1dedfee1bdc4def3ecac17552825a28d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\MobTools-2016.1102.1128.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0d5f33b3f009ae3e02c32dd1e70efcd6a252f3a6">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\MobTools-2016.1102.1128_5475fe45af0669ee5ec420fc8b34901d4c886796\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\YimaoMiao\easeui\unspecified\jars\libs\easemobchat_2.3.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="29d73d7463c58d25f7d40c8674720fa23c885bdb">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\8\easemobchat_2.3.2_0a297d75ecc803f6617f5db7718b95e7a9d202fe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.4.0\ea392375cf9ff59234a82e7928a204215ccc98cd\butterknife-annotations-8.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ea392375cf9ff59234a82e7928a204215ccc98cd">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\butterknife-annotations-8.4.0_925487489d33eff2f93f6d35540ba536dd2bb402\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.qiniu\happy-dns\0.2.7\d94b7987386a3aabbb5aa0be21589f72931f0489\happy-dns-0.2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d94b7987386a3aabbb5aa0be21589f72931f0489">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\happy-dns-0.2.7_a4619fae8c4a92ccdfde672568e499a996ea1f7f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\okhttp-3.2.0_8e5617213d04f21f7f78fc598703727aaa009a8b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\ShareSDK-Core-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="26a52e0d02642517cc4a4db0a2e5c507c02404fd">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\ShareSDK-Core-2.7.9_b6f57d7c7a103636aea0847694815a81745b2eb4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-support-v4-24.2.0_0dad716c346b540ae85652ad42e37b9cea66249b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-support-media-compat-24.2.0_62ef7aa787e32aedc8741f0fe6c54141d9556dae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\YimaoMiao\easeui\unspecified\jars\libs\BaiduLBS_Android.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="58ca2fd9380a230afb00512b56878606449efa09">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\8\BaiduLBS_Android_cb4d18a6ed4d766a2630678acaf9a593025e0e42\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\converter-gson-2.0.2_14c4e05c621b002a8743026b0213c8b469b1b0e9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\ShareSDK-Wechat-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="17856b4dfbb942a80b0e6df570292e8fe6e0ca3b">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\ShareSDK-Wechat-2.7.9_309f1723b9932bd063749de71a4952b9a99b3d70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\MobCommons-2016.1102.1128.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e5a3a5754e3bb9af46449eaab21b43420b75260d">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\MobCommons-2016.1102.1128_4e50b77455da88580625f938cec769c7732b28ff\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.0_bbcaeb38c23677e33403a4b56468798f7809fe8f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.github.q1104133609\pay\4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="259040e08a68621ccbf5fe95236646f30a9dee72">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.github.q1104133609-pay-4.0_c2ab6d65ac074b389949260bb1b5c80208c41a0c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\ShareSDK-Wechat-Favorite-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6a80926a19094db5d89727fccc5dcc0435309b66">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\ShareSDK-Wechat-Favorite-2.7.9_ed4699ea2dbeb5046a7bbaac9b6129f05e280eb4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.jakewharton-butterknife-8.4.0_9d3a223cc2ba9f6f1e7d70c4d55c3663a2cb8684\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.github.q1104133609\pay\4.0\jars\libs\libammsdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="07940d91118867174ca9f6b8312011ee27323519">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\libammsdk_20713de043559182fff7636bf8b1d9a5690377b1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\internal_impl-24.2.0_c183b8a44163115e45425a4e0e8fa8034c9a5c73\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.0_8589f3e1b074bd5913ed212f1d298595c3b0b064\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.2.0\a56f28d5b7fab623c6c1d2afa08dd496d873ac21\logging-interceptor-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\logging-interceptor-3.2.0_6e8a8f4497e23a13e1ac7f8da690d415deacacad\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.github.iwgang\countdownview\2.1.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="313a0aad4620cba2bc02f818a5120a14f9dbd2bf">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.github.iwgang-countdownview-2.1.2_b3fe18916b30bbf3eb8892212052d77816191c35\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\libs\ShareSDK-SinaWeibo-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="da825ad4e04f6cbcbd824faf253c54a438ad1df4">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\2\ShareSDK-SinaWeibo-2.7.9_fa8ebcd450f914ab034660cc40c896ff8342987e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\cn.bingoogolapple\bga-refreshlayout\1.1.6\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ae13fcdb2db8751cee77b12c51987c226eaf005e">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\cn.bingoogolapple-bga-refreshlayout-1.1.6_60e06f9e248dd7cb1981fa080be5fb75394ee66c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\internal_impl-24.2.0_50d8e0dd242a39063a70dc57dfa75323bdc15dcf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.0_cea0db09ace90ddef5a589841ef7cf612e1a72c1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\pl.droidsonroids.gif\android-gif-drawable\1.2.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="75d15557ff7531e59b01362d46bb06dd59c5f971">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\pl.droidsonroids.gif-android-gif-drawable-1.2.3_c0145521d5caedfda4b6d3437915e45871c2f5f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\incremental-runtime-classes\baidu\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43ebde82e564b80cecd0ccc992f73f316f490d6a">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\instant-run_b1c80c119e1dc2ececbcdcd908cff67ba2a145ed\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\cn.yipianfengye.android\zxing-library\2.0\jars\libs\zxing.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="27c951c81314597ba68dbc94f768757786045819">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\zxing_79a5f9727a3eed2787d084ac35c4bf0ff050d728\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="C:\Users\huangbo\Desktop\YimaoMiao\app\build\intermediates\transforms\dex\baidu\debug\folders\1000\10\com.android.support-multidex-1.0.1_fb6dfa274cab0f8959d9b5e0a0b2afc61056af15\classes.dex" />
+    </item>
+
+</items>
