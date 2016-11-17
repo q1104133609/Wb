@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="pay-4.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.q1104133609/pay/4.0/jars/libs/libammsdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.q1104133609/pay/4.0/jars/libs/org.apache.http.legacy.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.q1104133609/pay/4.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.q1104133609/pay/4.0/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.q1104133609/pay/4.0/jars/libs/alipaySingle-20160516.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
