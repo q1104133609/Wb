@@ -20,6 +20,10 @@ import com.uuzuche.lib_zxing.activity.CodeUtils;
 import com.uuzuche.lib_zxing.camera.BitmapLuminanceSource;
 import com.uuzuche.lib_zxing.decoding.DecodeFormatManager;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -69,7 +73,7 @@ public class Utils {
     }
 
     /**
-     * 判断是否登录
+     * 判断是否登录跳转
      *
      * @param context
      * @return
@@ -84,6 +88,20 @@ public class Utils {
         }
     }
 
+
+    /**
+     * 判断是否登录不跳转
+     *
+     * @param context
+     * @return
+     */
+    public static Boolean checkLoginNo(Context context) {
+        if (SharedPreferencesUtils.getString(context, Constans.USER_NAME, "").equals("")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     /**
      * 二维码相册
      */
@@ -154,6 +172,8 @@ public class Utils {
             return "解析失败~";
         }
     }
+
+
 
 
 }

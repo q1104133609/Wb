@@ -4,17 +4,23 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
+import com.bumptech.glide.Glide;
+import com.fansu.yimaomiao.App;
 import com.fansu.yimaomiao.Constans;
 import com.fansu.yimaomiao.R;
 import com.fansu.yimaomiao.base.BaseFragment;
 import com.fansu.yimaomiao.customview.BaseDialog;
+import com.fansu.yimaomiao.data.entity.LoginBean;
 import com.fansu.yimaomiao.event.LoginEvent;
 import com.fansu.yimaomiao.inter.OnDialogClickListener;
 import com.fansu.yimaomiao.utils.SharedPreferencesUtils;
 import com.fansu.yimaomiao.utils.Utils;
+import com.fansu.yimaomiao.utils.transform.GlideCircleTransform;
 import com.fansu.yimaomiao.view.activity.login.LoginActivity;
 import com.fansu.yimaomiao.view.activity.login.RegisterActivity;
 import com.fansu.yimaomiao.view.activity.mine.EarnPointsActivity;
@@ -33,6 +39,17 @@ public class MineFragment extends BaseFragment {
     LinearLayout linear_no_login;
     @BindView(R.id.linear_is_login)
     LinearLayout linear_is_login;
+    private LoginBean mLoginBean;
+    @BindView(R.id.image_head)
+    ImageView mHead;
+    @BindView(R.id.tv_name)
+    TextView mName;
+    @BindView(R.id.tv_sex)
+    TextView mSex;
+    @BindView(R.id.tv_money)
+    TextView mMonty;
+    @BindView(R.id.tv_jifen)
+    TextView mJifen;
 
     @Override
     protected int setRootView() {
@@ -41,7 +58,9 @@ public class MineFragment extends BaseFragment {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+        initUserView();
     }
+
 
     @OnClick(R.id.btn_loginout)
     public void loginout() {
@@ -53,7 +72,8 @@ public class MineFragment extends BaseFragment {
 
             @Override
             public void right(Dialog dialog) {
-                SharedPreferencesUtils.saveString(mActivity, Constans.USER_NAME, "");
+                SharedPreferencesUtils.clear(mActivity);
+                SharedPreferencesUtils.saveBoolean(mActivity, Constans.IS_FIRST, true);
                 mActivity.startActivity(LoginActivity.class);
                 linear_no_login.setVisibility(View.VISIBLE);
                 linear_is_login.setVisibility(View.GONE);
@@ -83,8 +103,7 @@ public class MineFragment extends BaseFragment {
      */
     @OnClick(R.id.tv_get_jifen)
     public void getjifen() {
-        if (Utils.checkLogin(mActivity))
-            mActivity.startActivity(EarnPointsActivity.class);
+        mActivity.startActivity(EarnPointsActivity.class);
 
     }
 
@@ -190,14 +209,40 @@ public class MineFragment extends BaseFragment {
 
     }
 
+    /**
+     * 登录完成监听
+     *
+     * @param loginEvent
+     */
     @Subscribe
     public void isLogin(LoginEvent loginEvent) {
-        if (Utils.checkLogin(mActivity)) {
+        initUserView();
+
+    }
+
+
+    /**
+     * 初始化用户数据
+     */
+    public void initUserView() {
+        if (Utils.checkLoginNo(mActivity)) {
             linear_no_login.setVisibility(View.GONE);
             linear_is_login.setVisibility(View.VISIBLE);
+            mLoginBean = App.mLoginBean;
+            if (mLoginBean != null) {
+                Glide.with(mActivity).load(App.mLoginBean.getUsertx()).transform(new GlideCircleTransform(mActivity))
+                        .error(R.mipmap.default_head)
+                        .into(mHead);
+                mName.setText(mLoginBean.getNickname());
+                mSex.setText(mLoginBean.getSex());
+                mJifen.setText(String.valueOf(mLoginBean.getUserjifen()));
+                mMonty.setText(String.valueOf(mLoginBean.getMoney()));
+            }
+
         } else {
             linear_no_login.setVisibility(View.VISIBLE);
             linear_is_login.setVisibility(View.GONE);
         }
+
     }
 }

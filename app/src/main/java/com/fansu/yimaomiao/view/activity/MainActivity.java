@@ -12,20 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blankj.utilcode.utils.LogUtils;
-import com.fansu.yimaomiao.App;
-import com.fansu.yimaomiao.Constans;
 import com.fansu.yimaomiao.R;
 import com.fansu.yimaomiao.base.BaseActivity;
-import com.fansu.yimaomiao.base.Result;
 import com.fansu.yimaomiao.base.mvp.BaseView;
-import com.fansu.yimaomiao.data.entity.LoginBean;
 import com.fansu.yimaomiao.data.entity.MovieEntity;
-import com.fansu.yimaomiao.http.WBService;
-import com.fansu.yimaomiao.http.Wbm;
 import com.fansu.yimaomiao.permission.MPermission;
 import com.fansu.yimaomiao.permission.annotation.OnMPermissionDenied;
 import com.fansu.yimaomiao.permission.annotation.OnMPermissionGranted;
-import com.fansu.yimaomiao.utils.SharedPreferencesUtils;
 import com.fansu.yimaomiao.view.fragment.main.ChatFragment;
 import com.fansu.yimaomiao.view.fragment.main.HomeFragment;
 import com.fansu.yimaomiao.view.fragment.main.MineFragment;
@@ -36,9 +29,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import butterknife.BindView;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 
 /**
@@ -253,6 +243,15 @@ public class MainActivity extends BaseActivity implements BaseView<MovieEntity>,
                         Manifest.permission.CAMERA,
                         Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.RECORD_AUDIO,
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.CALL_PHONE,
+                        Manifest.permission.READ_CALL_LOG,
+                        Manifest.permission.WRITE_CALL_LOG,
+                        Manifest.permission.ADD_VOICEMAIL,
+                        Manifest.permission.USE_SIP,
+                        Manifest.permission.PROCESS_OUTGOING_CALLS,
+
+
                         Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.ACCESS_FINE_LOCATION
                 )
@@ -300,7 +299,7 @@ public class MainActivity extends BaseActivity implements BaseView<MovieEntity>,
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // TODO Auto-generated method stub
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            exitBy2Click(); //调用双击退出函数
+            exitBy2Click();
         }
         return false;
     }
@@ -310,15 +309,15 @@ public class MainActivity extends BaseActivity implements BaseView<MovieEntity>,
     private void exitBy2Click() {
         Timer tExit = null;
         if (!isExit) {
-            isExit = true; // 准备退出
-            Toast.makeText(this, "确定要退出程序嘛~", Toast.LENGTH_SHORT).show();
+            isExit = true;
+            Toast.makeText(this, getString(R.string.is_exit), Toast.LENGTH_SHORT).show();
             tExit = new Timer();
             tExit.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    isExit = false; // 取消退出
+                    isExit = false;
                 }
-            }, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务
+            }, 2000);
 
         } else {
             finish();

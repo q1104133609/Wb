@@ -130,14 +130,19 @@
                     android:text="@string/get_verification" />
 
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/color_line">
 
+            </View>
             <LinearLayout
                 android:id="@+id/linear_pwd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:paddingLeft="15dp"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="50dp"
@@ -190,7 +195,7 @@
                 android:layout_height="40dp"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
-                android:text="@string/next"
+                android:text="@string/right"
                 android:onClick="onNext"
                 android:textColor="@color/white"
                 android:textSize="15dp" />

@@ -32,6 +32,8 @@ import rx.schedulers.Schedulers;
  */
 
 public class WBHttoClient {
+
+    public static String mToken;
     public static OkHttpClient getHttpClient() {
 
 
@@ -70,8 +72,6 @@ public class WBHttoClient {
                 .retryOnConnectionFailure(true)
                 .addInterceptor(new TokenInterceptor())
                 .connectTimeout(15, TimeUnit.SECONDS)
-                .readTimeout(300, TimeUnit.SECONDS)
-                .writeTimeout(300, TimeUnit.SECONDS)
                 .addNetworkInterceptor(cacheInterceptor)
                 .build();
         return client;
@@ -84,7 +84,7 @@ public class WBHttoClient {
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
             request.newBuilder()
-                    .addHeader("token", SharedPreferencesUtils.getString(App.getAppContext(), Constans.TOKEN, "0 "))
+                    .addHeader("token", SharedPreferencesUtils.getString(App.getAppContext(), Constans.TOKEN, ""))
                     .addHeader("deviceType", "ANDROID")
                     .addHeader("deviceModel", android.os.Build.MODEL)
                     .addHeader("type", "APP")
@@ -93,12 +93,14 @@ public class WBHttoClient {
             LogUtils.d("response.code=" + response.code());
 
             if (isTokenExpired(response)) {
-                LogUtils.d("静默自动刷新Token,然后重新请求数据");
-                String newSession = getNewToken();
+                String newTolen = getNewToken();
                 //使用新的Token，创建新的请求
                 Request newRequest = chain.request()
                         .newBuilder()
-                        .header("Cookie", "JSESSIONID=" + newSession)
+                        .addHeader("token", newTolen)
+                        .addHeader("deviceType", "ANDROID")
+                        .addHeader("deviceModel", android.os.Build.MODEL)
+                        .addHeader("type", "APP")
                         .build();
                 //重新请求
                 return chain.proceed(newRequest);
@@ -143,11 +145,16 @@ public class WBHttoClient {
                         }
 
                         @Override
-                        public void onNext(Result<LoginBean> movieEntity) {
-
+                        public void onNext(Result<LoginBean> loginBeanResult) {
+                            if (loginBeanResult.getCode() == 200) {
+                                SharedPreferencesUtils.saveString(App.getAppContext(), Constans.TOKEN, loginBeanResult.getToken());
+                                SharedPreferencesUtils.saveObject(App.getAppContext(), Constans.USER_INFO, loginBeanResult.getBean());
+                                mToken = loginBeanResult.getToken();
+                                App.mLoginBean = loginBeanResult.getBean();
+                            }
                         }
                     });
-            return "111";
+            return mToken;
         }
     }
 

@@ -17,4 +17,8 @@ public class HttpConstans {
      * 登陆
      */
     public static final String LOGIN = "user/userLogin.do";
+    /**
+     * 找回密码
+     */
+    public static final String RETRIEVE_PWD = "user/userzhmm.do";
 }

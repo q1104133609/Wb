@@ -15,7 +15,7 @@ public class WBService {
 
     public static Retrofit getService() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constans.KTHOST)
+                .baseUrl(Constans.HOST)
                 .client(WBHttoClient.getHttpClient())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())

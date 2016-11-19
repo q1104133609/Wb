@@ -10,7 +10,10 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.SDKInitializer;
 import com.easemob.easeui.controller.EaseUI;
+import com.fansu.yimaomiao.data.entity.LoginBean;
 import com.fansu.yimaomiao.utils.QNUtils;
+import com.fansu.yimaomiao.utils.SharedPreferencesUtils;
+import com.fansu.yimaomiao.utils.Utils;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 /**
@@ -23,9 +26,9 @@ public class App extends Application {
 
     public static String lat = "";
     public static String lon = "";
-    public static  String city = "";
+    public static String city = "";
     public static QNUtils qnUtils;
-
+    public static LoginBean mLoginBean;
     public LocationClient mLocationClient = null;
     public BDLocationListener myListener = new MyLocationListener();
 
@@ -37,6 +40,9 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        if (!SharedPreferencesUtils.getString(this, Constans.USER_NAME, "").equals("")) {
+            mLoginBean = SharedPreferencesUtils.getObject(this, Constans.USER_INFO, LoginBean.class);
+        }
         //七牛处理
         qnUtils = QNUtils.getInstance();
         //multidex 初始化

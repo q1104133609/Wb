@@ -45,32 +45,41 @@
         </activity>
         <activity android:name=".view.activity.login.CarouselActivity"
             android:theme="@style/AppThemeTwo"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
         <activity android:name=".view.activity.mine.EarnPointsActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
         <activity android:name=".view.activity.login.RetrievePwdActvity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".view.activity.login.LoginActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".view.activity.login.RegisterActivity"
-            android:launchMode="singleTask"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".view.activity.MainActivity"
-            android:launchMode="singleTask"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".view.activity.ease.ChatActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
         <activity android:name="com.easemob.easeui.ui.EaseBaiduMapActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
         <activity android:name="com.easemob.easeui.ui.EaseShowBigImageActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
         <activity android:name="com.easemob.easeui.ui.EaseShowVideoActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
         <activity android:name="com.easemob.easeui.ui.EaseShowNormalFileActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
 
 

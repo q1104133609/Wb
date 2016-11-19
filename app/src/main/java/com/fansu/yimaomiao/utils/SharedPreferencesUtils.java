@@ -2,8 +2,17 @@ package com.fansu.yimaomiao.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Base64;
 
 import com.fansu.yimaomiao.Constans;
+import com.fansu.yimaomiao.data.entity.LoginBean;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.StreamCorruptedException;
 
 
 /**
@@ -144,6 +153,7 @@ public class SharedPreferencesUtils {
     public static long getLong(Context context, String key, long defValue) {
         return getLong(context, SP_NAME, key, defValue);
     }
+
     public static long getLong(Context context, String sp_name, String key, long defValue) {
         sp = context.getSharedPreferences(sp_name, 0);
         return sp.getLong(key, defValue);
@@ -185,6 +195,7 @@ public class SharedPreferencesUtils {
 
     /**
      * 删除值
+     *
      * @param context
      * @param key
      */
@@ -199,10 +210,11 @@ public class SharedPreferencesUtils {
 
     /**
      * 清除数据
+     *
      * @param context
      * @param sp_name
      */
-    public static void clear(Context context,String sp_name){
+    public static void clear(Context context, String sp_name) {
         sp = context.getSharedPreferences(sp_name, 0);
         sp.edit().clear().commit();
     }
@@ -210,4 +222,76 @@ public class SharedPreferencesUtils {
     public static void clear(Context context) {
         clear(context, SP_NAME);
     }
+
+
+    /**
+     * 针对复杂类型存储<对象>
+     *
+     * @param key
+     * @param object
+     */
+    public static void saveObject(Context context,String key, Object object) {
+        SharedPreferences sp = context.getSharedPreferences(SP_NAME, 0);
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream out = null;
+        try {
+            out = new ObjectOutputStream(baos);
+            out.writeObject(object);
+            String objectVal = new String(Base64.encode(baos.toByteArray(), Base64.DEFAULT));
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putString(key, objectVal);
+            editor.commit();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (baos != null) {
+                    baos.close();
+                }
+                if (out != null) {
+                    out.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    public static  <T> T getObject(Context context,  String key, Class<T> clazz) {
+        SharedPreferences sp = context.getSharedPreferences(SP_NAME, 0);
+        if (sp.contains(key)) {
+            String objectVal = sp.getString(key, null);
+            byte[] buffer = Base64.decode(objectVal, Base64.DEFAULT);
+            ByteArrayInputStream bais = new ByteArrayInputStream(buffer);
+            ObjectInputStream ois = null;
+            try {
+                ois = new ObjectInputStream(bais);
+                T t = (T) ois.readObject();
+                return t;
+            } catch (StreamCorruptedException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (bais != null) {
+                        bais.close();
+                    }
+                    if (ois != null) {
+                        ois.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
+
+
 }

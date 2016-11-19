@@ -5,12 +5,19 @@ package com.fansu.yimaomiao;
  */
 
 public class Constans {
-    public static final String HOST = "http://127.0.0.1:8080/miaosha/";
-    public static final String KTHOST = "https://api.douban.com/v2/movie/";
+    public static final String HOST = "http://yinlian.ngrok.cc/miaosha/";
     //緩存路徑
     public static final String CACHE_PAHT = "WB/HttpCache";
     //token失效
     public static final int TOKEN_IS_OUT = 402;
+    //失效
+    public static final int INTENT_ERROR = 400;
+    //服务器错误
+    public static final int SERVICE_ERROR = 500;
+    //已经注册
+    public static final int IS_REGISTER = 407;
+    //成功
+    public static final int SERVICE_SUCCESS = 200;
     //二维码返回code
     public static final int ERWEIMA_CODE = 250;
     //二维码图片返回code
@@ -38,5 +45,9 @@ public class Constans {
      * token
      */
     public static final String TOKEN ="token";
+    /**
+     * 用户信息
+     */
+    public static final String USER_INFO = "userinfo";
     //===================shareperface=====================
 }

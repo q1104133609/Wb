@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -16,7 +17,10 @@ import com.fansu.yimaomiao.base.mvp.MvpActivity;
 import com.fansu.yimaomiao.customview.ClearableEditTextWithIcon;
 import com.fansu.yimaomiao.data.entity.LoginBean;
 import com.fansu.yimaomiao.data.presenter.LoginPresenter;
+import com.fansu.yimaomiao.event.LoginEvent;
 import com.fansu.yimaomiao.view.activity.MainActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -96,7 +100,7 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements BaseVi
         } else if (TextUtils.isEmpty(mEditPwd.getText().toString())) {
             showToast(R.string.pwd_empty);
         } else {
-            loginPresenter.loadData(mEditAccount.getText().toString(), mEditPwd.getText().toString());
+            loginPresenter.toLogin(mEditAccount.getText().toString(), mEditPwd.getText().toString());
         }
 
     }
@@ -109,20 +113,20 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements BaseVi
     @OnClick(R.id.btn_register)
     public void register() {
         startActivity(RegisterActivity.class);
-
     }
 
 
     @Override
     public void isSuccess(Result<LoginBean> bean) {
+        closeLoading();
+        EventBus.getDefault().post(new LoginEvent());
         showToast("登录成功~");
-        Intent intent = new Intent(mContext, MainActivity.class);
-        startActivity(intent);
         finish();
     }
 
     @Override
     public void isFailure(String msg) {
+        closeLoading();
         showToast("登录失败~");
     }
 

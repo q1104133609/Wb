@@ -56,23 +56,7 @@
             android:text=">"
             android:textColor="@color/text_hint" />
 
-        <TextView
-            android:id="@+id/tv_register_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/register_two"
-            android:textColor="@color/text_hint"
-            android:textSize="12dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:text=">"
-            android:textColor="@color/text_hint" />
 
         <TextView
             android:id="@+id/tv_register_three"
@@ -156,7 +140,7 @@
             android:textColor="@color/text_title" />
 
         <EditText
-            android:id="@+id/edit_login_password"
+            android:id="@+id/edit_login_yanzm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -164,7 +148,7 @@
             android:drawablePadding="15dp"
             android:hint="@string/verification_hint"
             android:longClickable="false"
-            android:maxLength="20"
+            android:maxLength="6"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:textColor="@color/text_title"
@@ -182,6 +166,7 @@
         </View>
 
         <TextView
+            android:id="@+id/tv_yanzm_again"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -204,7 +189,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/input_password"
+            android:text="@string/pwd"
             android:textColor="@color/text_title" />
 
         <EditText

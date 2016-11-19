@@ -17,19 +17,71 @@
 package com.fansu.yimaomiao.base;
 
 
-public class Result<T>  {
+import java.io.Serializable;
+import java.util.List;
+
+public class Result<T>  implements Serializable{
     public String status;
     public String message;
-    public T data;
+    public T bean;
+    public String token;
+    public int code;
+    public String pagination;
+    private List<T> listBean;
 
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-    @Override
-    public String toString() {
-        return "Result{" +
-                "status=" + status +
-                ", message='" + message + '\'' +
-                ", data=" + data +
-                '}';
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public T getBean() {
+        return bean;
+    }
+
+    public void setBean(T bean) {
+        this.bean = bean;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getPagination() {
+        return pagination;
+    }
+
+    public void setPagination(String pagination) {
+        this.pagination = pagination;
+    }
+
+    public List<T> getListBean() {
+        return listBean;
+    }
+
+    public void setListBean(List<T> listBean) {
+        this.listBean = listBean;
     }
 }

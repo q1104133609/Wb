@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="1acfeeead11eccd46087dd9ad7a1bbbff81fb947">
+        sha1="ded79e0dddfdad6ce5c7b3d2b807fe0f184271b4">
         <dex dex="/Users/huangbo/Desktop/WBBase/app/build/intermediates/transforms/dex/baidu/debug/folders/1000/10/instant-run_6e6dea0ae6f176b9c7b3c435cc5271e9f1537eac/classes.dex" />
     </item>
     <item
@@ -277,7 +277,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="33f3c2ef43aa2400c962df9975976785be278e97">
+        sha1="8fb39c1ff6bb6202c53d142e7be031f57641e996">
         <dex dex="/Users/huangbo/Desktop/WBBase/app/build/intermediates/transforms/dex/baidu/debug/folders/1000/10/instant-run-bootstrap_b63806807e626a18a1c6b0687ef396eb984d8cfb/classes.dex" />
     </item>
     <item
