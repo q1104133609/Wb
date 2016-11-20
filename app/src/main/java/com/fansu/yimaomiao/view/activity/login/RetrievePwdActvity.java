@@ -1,6 +1,5 @@
 package com.fansu.yimaomiao.view.activity.login;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -16,8 +15,8 @@ import com.fansu.yimaomiao.R;
 import com.fansu.yimaomiao.base.Result;
 import com.fansu.yimaomiao.base.mvp.BaseView;
 import com.fansu.yimaomiao.base.mvp.MvpActivity;
-import com.fansu.yimaomiao.data.presenter.RetrievePwdPersenter;
-import com.fansu.yimaomiao.data.presenter.YzmPersenter;
+import com.fansu.yimaomiao.presenter.login.RetrievePwdPersenter;
+import com.fansu.yimaomiao.presenter.login.YzmPersenter;
 import com.fansu.yimaomiao.inter.YzmListener;
 
 import java.util.Timer;

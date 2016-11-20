@@ -22,7 +22,23 @@ public class Constans {
     public static final int ERWEIMA_CODE = 250;
     //二维码图片返回code
     public static final int ERWEIMA_IMAGE_CODE = 251;
+    //日志
+    public static final String TGA = "huangbo";
 
+    /**
+     * 每页8个
+     */
+    public static final int PAGE_SIZE = 8;
+
+    /**
+     * 照相code
+     */
+    public static final int REQUEST_CODE_CAMERA  = 10;
+
+    /**
+     * 相册code
+     */
+    public static final int REQUEST_CODE_GALLERY  = 11;
 
     //===================shareperface=====================
     /**
@@ -49,5 +65,8 @@ public class Constans {
      * 用户信息
      */
     public static final String USER_INFO = "userinfo";
+
+
+
     //===================shareperface=====================
 }

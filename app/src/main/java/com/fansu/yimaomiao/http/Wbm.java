@@ -3,9 +3,12 @@ package com.fansu.yimaomiao.http;
 
 import com.fansu.yimaomiao.HttpConstans;
 import com.fansu.yimaomiao.base.Result;
-import com.fansu.yimaomiao.data.entity.LoginBean;
-import com.fansu.yimaomiao.data.entity.MovieEntity;
-import com.fansu.yimaomiao.data.entity.RegisterBean;
+import com.fansu.yimaomiao.entity.LoginBean;
+import com.fansu.yimaomiao.entity.MovieEntity;
+import com.fansu.yimaomiao.entity.NearBean;
+import com.fansu.yimaomiao.entity.RegisterBean;
+import com.fansu.yimaomiao.entity.ShopBean;
+import com.fansu.yimaomiao.entity.ShowBean;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -23,6 +26,7 @@ public interface Wbm {
     Observable<MovieEntity> getTopMovie(@Query("start") int start, @Query("count") int count);
 
 //======================================登录注册==================================================
+
     /**
      * 登录
      *
@@ -78,5 +82,32 @@ public interface Wbm {
 
     //======================================登录注册==================================================
 
+    //======================================主页4页面==================================================
+
+    /**
+     * 获取主页商品列表
+     *
+     * @return
+     */
+    @GET(HttpConstans.HSHOP_INDEX)
+    Observable<Result<ShopBean>> getShopGoods();
+
+    /**
+     * 获取晒单列表
+     *
+     * @return
+     */
+    @GET(HttpConstans.GET_SHOW_LIST)
+    Observable<Result<ShowBean>> getShowList(@Query("pageNo") int pageNo,@Query("pageSize") int pageSize);
+
+    /**
+     * 获取附近人列表
+     *
+     * @return
+     */
+    @GET(HttpConstans.HSHOP_INDEX)
+    Observable<Result<NearBean>> getNearList(@Query("pageNo") int pageNo,@Query("pageSize") int pageSize);
+
+    //======================================主页4页面==================================================
 
 }

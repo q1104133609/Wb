@@ -1,10 +1,8 @@
 package com.fansu.yimaomiao.view.activity.login;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -15,10 +13,9 @@ import com.fansu.yimaomiao.base.Result;
 import com.fansu.yimaomiao.base.mvp.BaseView;
 import com.fansu.yimaomiao.base.mvp.MvpActivity;
 import com.fansu.yimaomiao.customview.ClearableEditTextWithIcon;
-import com.fansu.yimaomiao.data.entity.LoginBean;
-import com.fansu.yimaomiao.data.presenter.LoginPresenter;
+import com.fansu.yimaomiao.entity.LoginBean;
+import com.fansu.yimaomiao.presenter.login.LoginPresenter;
 import com.fansu.yimaomiao.event.LoginEvent;
-import com.fansu.yimaomiao.view.activity.MainActivity;
 
 import org.greenrobot.eventbus.EventBus;
 

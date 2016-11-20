@@ -21,4 +21,14 @@ public class HttpConstans {
      * 找回密码
      */
     public static final String RETRIEVE_PWD = "user/userzhmm.do";
+
+    /**
+     * 首页倒计时列表
+     */
+    public static final String HSHOP_INDEX = "shop/selecttopwu.do";
+
+    /**
+     * 首页晒单
+     */
+    public static final String GET_SHOW_LIST = "order/pjfenye.do";
 }

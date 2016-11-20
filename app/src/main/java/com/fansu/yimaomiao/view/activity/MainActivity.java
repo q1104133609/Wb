@@ -14,8 +14,6 @@ import android.widget.Toast;
 import com.blankj.utilcode.utils.LogUtils;
 import com.fansu.yimaomiao.R;
 import com.fansu.yimaomiao.base.BaseActivity;
-import com.fansu.yimaomiao.base.mvp.BaseView;
-import com.fansu.yimaomiao.data.entity.MovieEntity;
 import com.fansu.yimaomiao.permission.MPermission;
 import com.fansu.yimaomiao.permission.annotation.OnMPermissionDenied;
 import com.fansu.yimaomiao.permission.annotation.OnMPermissionGranted;
@@ -25,16 +23,19 @@ import com.fansu.yimaomiao.view.fragment.main.MineFragment;
 import com.fansu.yimaomiao.view.fragment.main.NearFragment;
 import com.fansu.yimaomiao.view.fragment.main.ShowFragmet;
 
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import butterknife.BindView;
+import cn.finalteam.galleryfinal.GalleryFinal;
+import cn.finalteam.galleryfinal.model.PhotoInfo;
 
 
 /**
  * 主页面
  */
-public class MainActivity extends BaseActivity implements BaseView<MovieEntity>, View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private final int BASIC_PERMISSION_REQUEST_CODE = 100;
     private HomeFragment mHomeFragment;
@@ -250,8 +251,6 @@ public class MainActivity extends BaseActivity implements BaseView<MovieEntity>,
                         Manifest.permission.ADD_VOICEMAIL,
                         Manifest.permission.USE_SIP,
                         Manifest.permission.PROCESS_OUTGOING_CALLS,
-
-
                         Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.ACCESS_FINE_LOCATION
                 )
@@ -272,27 +271,6 @@ public class MainActivity extends BaseActivity implements BaseView<MovieEntity>,
     @OnMPermissionDenied(BASIC_PERMISSION_REQUEST_CODE)
     public void onBasicPermissionFailed() {
         LogUtils.d("授权失败~");
-    }
-
-
-    @Override
-    public void isSuccess(MovieEntity bean) {
-    }
-
-
-    @Override
-    public void isFailure(String msg) {
-        Log.e("huangbo", msg);
-    }
-
-    @Override
-    public void isLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
     }
 
 

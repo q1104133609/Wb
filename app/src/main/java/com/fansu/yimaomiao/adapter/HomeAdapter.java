@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.fansu.yimaomiao.R;
+import com.fansu.yimaomiao.entity.ShopBean;
 import com.fansu.yimaomiao.utils.Utils;
 import com.fansu.yimaomiao.utils.transform.GlideRoundTransform;
 
@@ -27,14 +28,15 @@ import cn.iwgang.countdownview.CountdownView;
 
 public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context mContext;
-    private List<String> mList = new ArrayList<>();
+    private List<ShopBean> mList = new ArrayList<>();
     public static final int ITEM_TYPE_BOTTOM = 2;
     public static final int ITEM_TYPE_CONTENT = 1;
     /**
      * 沒有更多
      */
     private boolean isNoMore;
-    private int mBottomCount = 1;//底部View个数
+    //// TODO: 16/11/19 修改添加更多 
+    private int mBottomCount = 0;//底部View个数
 
     public HomeAdapter(Context mContext) {
         this.mContext = mContext;
@@ -69,18 +71,17 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (getItemViewType(position) == ITEM_TYPE_CONTENT) {
-            ((HomeContentView) holder).mName.setText(mList.get(position));
-            ((HomeContentView) holder).mMoney.setText(mList.get(position));
-            ((HomeContentView) holder).mName.setText(mList.get(position));
-            Glide.with(mContext).load("").error(R.mipmap.default_photo).transform(new GlideRoundTransform(mContext)).into(((HomeContentView) holder).mImage_Goods);
-            ((HomeContentView) holder).mCountdownView.start(Utils.getChaTime(Long.valueOf(mList.get(position))));
+            ((HomeContentView) holder).mName.setText(mList.get(position).getShopname());
+            ((HomeContentView) holder).mMoney.setText(String.valueOf(mList.get(position).getShopjg()));
+            Glide.with(mContext).load(mList.get(position).getShopphoto()).error(R.mipmap.default_photo).transform(new GlideRoundTransform(mContext)).into(((HomeContentView) holder).mImage_Goods);
+            ((HomeContentView) holder).mCountdownView.start(Utils.getChaTime(Long.valueOf(mList.get(position).getMssj()))/1000);
             ((HomeContentView) holder).mCountdownView.setOnCountdownEndListener(new CountdownView.OnCountdownEndListener() {
                 @Override
                 public void onEnd(CountdownView cv) {
                     cv.setVisibility(View.GONE);
                 }
             });
-            if (Utils.getChaTime(Long.valueOf(mList.get(position))) <= 0){
+            if (Utils.getChaTime(Long.valueOf(Long.valueOf(mList.get(position).getMssj()))/1000) <= 0){
                 ((HomeContentView) holder).mCountdownView.setVisibility(View.GONE);
             }else{
                 ((HomeContentView) holder).mCountdownView.setVisibility(View.VISIBLE);
@@ -112,7 +113,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
      *
      * @param imageList
      */
-    public void addData(List<String> imageList) {
+    public void addData(List<ShopBean> imageList) {
         if (imageList.size() > 0) {
             isNoMore = false;
             mList.addAll(imageList);
@@ -122,6 +123,13 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             notifyDataSetChanged();
 
         }
+    }
+
+    public void setData(List<ShopBean> imageList){
+        mList.clear();
+        mList.addAll(imageList);
+        notifyDataSetChanged();
+
     }
 
 

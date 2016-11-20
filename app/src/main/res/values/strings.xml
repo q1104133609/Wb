@@ -83,5 +83,7 @@
     <string name="text_cancle">取消</string>
     <string name="loginout">是否确定要注销账户?</string>
     <string name="is_exit">确定要退出一毛秒嘛~</string>
+    <string name="photo">相册</string>
+    <string name="camera">相机</string>
 
 </resources>

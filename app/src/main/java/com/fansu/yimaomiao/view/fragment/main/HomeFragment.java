@@ -5,17 +5,18 @@ import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
-
 import com.fansu.yimaomiao.R;
 import com.fansu.yimaomiao.adapter.HomeAdapter;
-import com.fansu.yimaomiao.base.BaseFragment;
+import com.fansu.yimaomiao.base.Result;
+import com.fansu.yimaomiao.base.mvp.BaseView;
+import com.fansu.yimaomiao.base.mvp.MvpFagment;
 import com.fansu.yimaomiao.customview.CycleSlipViewPager;
 import com.fansu.yimaomiao.customview.LoadMoreRecyclerView;
+import com.fansu.yimaomiao.entity.ShopBean;
+import com.fansu.yimaomiao.presenter.home.HomeFramgnetPercenter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -27,7 +28,7 @@ import cn.bingoogolapple.refreshlayout.BGARefreshViewHolder;
  * Created by leo on 16/11/1.
  */
 
-public class HomeFragment extends BaseFragment implements BGARefreshLayout.BGARefreshLayoutDelegate, CycleSlipViewPager.OnBannerOnClickListener {
+public class HomeFragment extends MvpFagment<HomeFramgnetPercenter> implements BGARefreshLayout.BGARefreshLayoutDelegate, CycleSlipViewPager.OnBannerOnClickListener, BaseView<Result<ShopBean>> {
     @BindView(R.id.recyclerview)
     LoadMoreRecyclerView mRecyclerView;
     @BindView(R.id.bgarefresh)
@@ -37,10 +38,12 @@ public class HomeFragment extends BaseFragment implements BGARefreshLayout.BGARe
     private HomeAdapter mHomeAdapter;
     @BindView(R.id.appbar)
     AppBarLayout appBarLayout;
+    private List<ShopBean> mList = new ArrayList<>();
     /**
      * 是否正在加载
      */
     private boolean mOnLoad;
+    private HomeFramgnetPercenter mHomeFramgnetPercenter;
 
     @Override
     protected int setRootView() {
@@ -66,32 +69,17 @@ public class HomeFragment extends BaseFragment implements BGARefreshLayout.BGARe
      * 初始化recyclerview
      */
     private void initReycler() {
-        List<String> imageList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            imageList.add("1"+i+"78338200");
-        }
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         mRecyclerView.setAdapter(mHomeAdapter = new HomeAdapter(mActivity));
         mRecyclerView.setLoadMoreListener(() -> {
-            if (!mOnLoad) {
-                mOnLoad = true;
-                Timer timer = new Timer();
-                timer.schedule(new TimerTask() {
-                    @Override
-                    public void run() {
-                        mActivity.runOnUiThread(new TimerTask() {
-                            @Override
-                            public void run() {
-                                mOnLoad = false;
-                                mHomeAdapter.addData(imageList);
-                                timer.cancel();
-                            }
-                        });
-                    }
-                }, 2000, 2000);
-
-            }
+//            if (!mOnLoad) {
+//                mHomeFramgnetPercenter
+//                mOnLoad = true;
+//                mOnLoad = false;
+//                mHomeAdapter.addData(imageList);
+//            }
         });
+
     }
 
 
@@ -112,12 +100,7 @@ public class HomeFragment extends BaseFragment implements BGARefreshLayout.BGARe
 
     @Override
     public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
-        List<String> imageList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            imageList.add("1478"+i+"35800");
-        }
-        mHomeAdapter.addData(imageList);
-        refreshLayout.endRefreshing();
+        mHomeFramgnetPercenter.getShopGoods();
 
     }
 
@@ -178,4 +161,37 @@ public class HomeFragment extends BaseFragment implements BGARefreshLayout.BGARe
     }
 
 
+    @Override
+    public void isSuccess(Result<ShopBean> bean) {
+        if (bean.getCode() == 200) {
+            mList.clear();
+            mList.addAll(bean.getListBean());
+            mHomeAdapter.setData(mList);
+            mRefreshLayout.endRefreshing();
+        }else{
+            mActivity.showToast("获取列表失败,请刷新重试~");
+        }
+    }
+
+    @Override
+    public void isFailure(String msg) {
+        mActivity.showToast("获取列表失败,请刷新重试~");
+        mRefreshLayout.endRefreshing();
+    }
+
+    @Override
+    public void isLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+        mRefreshLayout.endRefreshing();
+
+    }
+
+    @Override
+    protected HomeFramgnetPercenter createPresenter() {
+        return mHomeFramgnetPercenter = new HomeFramgnetPercenter(this);
+    }
 }

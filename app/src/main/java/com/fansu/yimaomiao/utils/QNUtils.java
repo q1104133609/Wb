@@ -46,8 +46,6 @@ public class QNUtils {
         builder.connectTimeout(CONNECT_TIMEOUT);// 链接超时。默认 10秒
         builder.responseTimeout(RESPONSE_TIMEOUT); // 服务器响应超时。默认 60秒
         builder.zone(Zone.zone0); // 设置区域，指定不同区域的上传域名、备用域名、备用IP。默认 Zone.zone0
-        //builder.recorder(null);  // recorder 分片上传时，已上传片记录器。默认 null
-        //builder.recorder(null, "keygen"); // keyGen 分片上传时，生成标识符，用于片记录器区分是那个文件的上传记录
         config = builder.build();
         uploadManager = new UploadManager(config);
     }

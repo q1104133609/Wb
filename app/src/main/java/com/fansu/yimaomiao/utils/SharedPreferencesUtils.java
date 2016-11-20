@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.util.Base64;
 
 import com.fansu.yimaomiao.Constans;
-import com.fansu.yimaomiao.data.entity.LoginBean;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

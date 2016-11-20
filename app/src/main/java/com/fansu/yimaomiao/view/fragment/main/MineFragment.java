@@ -3,6 +3,7 @@ package com.fansu.yimaomiao.view.fragment.main;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,7 +16,8 @@ import com.fansu.yimaomiao.Constans;
 import com.fansu.yimaomiao.R;
 import com.fansu.yimaomiao.base.BaseFragment;
 import com.fansu.yimaomiao.customview.BaseDialog;
-import com.fansu.yimaomiao.data.entity.LoginBean;
+import com.fansu.yimaomiao.customview.ChoosePhotoDialog;
+import com.fansu.yimaomiao.entity.LoginBean;
 import com.fansu.yimaomiao.event.LoginEvent;
 import com.fansu.yimaomiao.inter.OnDialogClickListener;
 import com.fansu.yimaomiao.utils.SharedPreferencesUtils;
@@ -27,8 +29,12 @@ import com.fansu.yimaomiao.view.activity.mine.EarnPointsActivity;
 
 import org.greenrobot.eventbus.Subscribe;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.finalteam.galleryfinal.GalleryFinal;
+import cn.finalteam.galleryfinal.model.PhotoInfo;
 
 /**
  * Created by leo on 16/11/1.

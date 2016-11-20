@@ -19,9 +19,9 @@ import com.fansu.yimaomiao.base.Result;
 import com.fansu.yimaomiao.base.mvp.BaseView;
 import com.fansu.yimaomiao.base.mvp.MvpActivity;
 import com.fansu.yimaomiao.customview.ClearableEditTextWithIcon;
-import com.fansu.yimaomiao.data.entity.RegisterBean;
-import com.fansu.yimaomiao.data.presenter.RegisterPersenter;
-import com.fansu.yimaomiao.data.presenter.YzmPersenter;
+import com.fansu.yimaomiao.entity.RegisterBean;
+import com.fansu.yimaomiao.presenter.login.RegisterPersenter;
+import com.fansu.yimaomiao.presenter.login.YzmPersenter;
 import com.fansu.yimaomiao.inter.YzmListener;
 
 import java.util.Timer;

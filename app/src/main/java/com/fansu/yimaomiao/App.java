@@ -10,11 +10,18 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.SDKInitializer;
 import com.easemob.easeui.controller.EaseUI;
-import com.fansu.yimaomiao.data.entity.LoginBean;
+import com.fansu.yimaomiao.entity.LoginBean;
+import com.fansu.yimaomiao.utils.GlideImageLoader;
 import com.fansu.yimaomiao.utils.QNUtils;
 import com.fansu.yimaomiao.utils.SharedPreferencesUtils;
 import com.fansu.yimaomiao.utils.Utils;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
+
+import cn.finalteam.galleryfinal.CoreConfig;
+import cn.finalteam.galleryfinal.FunctionConfig;
+import cn.finalteam.galleryfinal.GalleryFinal;
+import cn.finalteam.galleryfinal.ImageLoader;
+import cn.finalteam.galleryfinal.ThemeConfig;
 
 /**
  * Created by leo on 16/10/22.
@@ -53,31 +60,30 @@ public class App extends Application {
         EaseUI.getInstance().init(this);
         //二维码初始化
         ZXingLibrary.initDisplayOpinion(this);
-        initLocation();
+        Utils.initLocation(this, mLocationClient, myListener, 0);
         appContext = getApplicationContext();
+        initPhoto();
     }
 
     /**
-     * 初始化定位
+     * 初始化图片选择器
      */
-    private void initLocation() {
-        mLocationClient = new LocationClient(getApplicationContext());     //声明LocationClient类
-        mLocationClient.registerLocationListener(myListener);    //注册监听函数
-        LocationClientOption option = new LocationClientOption();
-        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy
-        );//可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
-        option.setScanSpan(0);
-        option.setCoorType("bd09ll");//可选，默认gcj02，设置返回的定位结果坐标系
-        option.setIsNeedAddress(true);//可选，设置是否需要地址信息，默认不需要
-        option.setOpenGps(false);//可选，默认false,设置是否使用gps
-        option.setLocationNotify(false);//可选，默认false，设置是否当GPS有效时按照1S/1次频率输出GPS结果
-        option.setIsNeedLocationDescribe(true);//可选，默认false，设置是否需要位置语义化结果，可以在BDLocation.getLocationDescribe里得到，结果类似于“在北京天安门附近”
-        option.setIsNeedLocationPoiList(true);//可选，默认false，设置是否需要POI结果，可以在BDLocation.getPoiList里得到
-        option.setIgnoreKillProcess(false);//可选，默认true，定位SDK内部是一个SERVICE，并放到了独立进程，设置是否在stop的时候杀死这个进程，默认不杀死
-        option.SetIgnoreCacheException(false);//可选，默认false，设置是否收集CRASH信息，默认收集
-        option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤GPS仿真结果，默认需要
-        mLocationClient.setLocOption(option);
-        mLocationClient.start();
+    public void initPhoto(){
+        ThemeConfig theme = new ThemeConfig.Builder()
+        .build();
+        FunctionConfig functionConfig = new FunctionConfig.Builder()
+                .setEnableCamera(true)
+                .setEnableCrop(true)
+                .setEnableRotate(true)
+                .setCropSquare(true)
+                .setEnableEdit(true)
+                .setEnablePreview(true)
+        .build();
+        ImageLoader imageloader = new GlideImageLoader();
+        CoreConfig coreConfig = new CoreConfig.Builder(this, imageloader, theme.DARK)
+                .setFunctionConfig(functionConfig)
+        .build();
+        GalleryFinal.init(coreConfig);
     }
 
 

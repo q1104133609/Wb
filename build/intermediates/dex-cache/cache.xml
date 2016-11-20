@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="ded79e0dddfdad6ce5c7b3d2b807fe0f184271b4">
+        sha1="575df7826a61826cfa22e49d87d4fd0caee48cd9">
         <dex dex="/Users/huangbo/Desktop/WBBase/app/build/intermediates/transforms/dex/baidu/debug/folders/1000/10/instant-run_6e6dea0ae6f176b9c7b3c435cc5271e9f1537eac/classes.dex" />
     </item>
     <item
@@ -36,6 +36,15 @@
         revision="24.0.3"
         sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
         <dex dex="/Users/huangbo/Desktop/WBBase/app/build/intermediates/transforms/dex/baidu/debug/folders/1000/10/internal_impl-24.2.0_d86e1cd10e0269518d20e3984f6573e2ff435a0a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/huangbo/Desktop/WBBase/app/build/intermediates/exploded-aar/cn.finalteam/toolsfinal/1.1.5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="966da5b6a8bfdef0bfc660e349f8765dde5cb6f3">
+        <dex dex="/Users/huangbo/Desktop/WBBase/app/build/intermediates/transforms/dex/baidu/debug/folders/1000/10/cn.finalteam-toolsfinal-1.1.5_4023738c4c6b68539f06759f0707f11313292c65/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -90,6 +99,15 @@
         revision="24.0.3"
         sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
         <dex dex="/Users/huangbo/Desktop/WBBase/app/build/intermediates/transforms/dex/baidu/debug/folders/1000/10/library-2.4.0_eecabe8733755bd262bf708ec5c8c97cd0d99312/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/huangbo/Desktop/WBBase/app/build/intermediates/exploded-aar/com.tbruyelle.rxpermissions/rxpermissions/0.9.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3caf7f422c73c08c744cafcae481781a13b54d70">
+        <dex dex="/Users/huangbo/Desktop/WBBase/app/build/intermediates/transforms/dex/baidu/debug/folders/1000/10/com.tbruyelle.rxpermissions-rxpermissions-0.9.0_77580aad95d823131f4d6bdabbe5c4ca3932e929/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -277,7 +295,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="8fb39c1ff6bb6202c53d142e7be031f57641e996">
+        sha1="e6853654d67e3a07f24eec42adb8f439a45c6104">
         <dex dex="/Users/huangbo/Desktop/WBBase/app/build/intermediates/transforms/dex/baidu/debug/folders/1000/10/instant-run-bootstrap_b63806807e626a18a1c6b0687ef396eb984d8cfb/classes.dex" />
     </item>
     <item
@@ -522,6 +540,15 @@
         revision="24.0.3"
         sha1="27c951c81314597ba68dbc94f768757786045819">
         <dex dex="/Users/huangbo/Desktop/WBBase/app/build/intermediates/transforms/dex/baidu/debug/folders/1000/10/zxing_791c8a51641d45b9403d3977cb3669e0948d11fa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/huangbo/Desktop/WBBase/app/build/intermediates/exploded-aar/cn.finalteam/galleryfinal/1.4.8.7/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c74f0952cfb481882d8cedf4ca9f3c60289a3301">
+        <dex dex="/Users/huangbo/Desktop/WBBase/app/build/intermediates/transforms/dex/baidu/debug/folders/1000/10/cn.finalteam-galleryfinal-1.4.8.7_be3789fd08fb5044835296732a92d289461c6a15/classes.dex" />
     </item>
     <item
         is-multidex="true"

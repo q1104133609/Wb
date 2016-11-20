@@ -19,8 +19,8 @@ android {
     }
 
 
-    signingConfigs{
-        simple{
+    signingConfigs {
+        simple {
             storeFile file("key/purchase.jks")
             storePassword "123456"
             keyAlias "purchasedebug"
@@ -80,9 +80,6 @@ android {
         }
     }
 }
-
-
-
 
 //multidex 配置
 afterEvaluate {
@@ -158,5 +155,9 @@ dependencies {
     //BGArefresh
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'cn.bingoogolapple:bga-refreshlayout:1.1.6@aar'
+    //rxpermissions
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.0@aar'
+    //图片选择器
+    compile 'cn.finalteam:galleryfinal:1.4.8.7'
 
 }

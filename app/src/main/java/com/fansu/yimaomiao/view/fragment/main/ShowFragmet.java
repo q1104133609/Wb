@@ -5,11 +5,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.fansu.yimaomiao.Constans;
 import com.fansu.yimaomiao.R;
 import com.fansu.yimaomiao.adapter.ShowAdapter;
-import com.fansu.yimaomiao.base.BaseFragment;
+import com.fansu.yimaomiao.base.Result;
+import com.fansu.yimaomiao.base.mvp.BaseView;
+import com.fansu.yimaomiao.base.mvp.MvpFagment;
+import com.fansu.yimaomiao.entity.ShowBean;
 import com.fansu.yimaomiao.inter.OnItemClickListener;
+import com.fansu.yimaomiao.presenter.home.ShowPercenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,20 +25,25 @@ import butterknife.BindView;
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 import cn.bingoogolapple.refreshlayout.BGARefreshViewHolder;
+import cn.finalteam.galleryfinal.GalleryFinal;
+import cn.finalteam.galleryfinal.model.PhotoInfo;
+
+import static com.fansu.yimaomiao.App.city;
 
 /**
  * Created by leo on 16/11/1.
  */
 
-public class ShowFragmet extends BaseFragment implements BGARefreshLayout.BGARefreshLayoutDelegate,OnItemClickListener {
+public class ShowFragmet extends MvpFagment<ShowPercenter> implements BGARefreshLayout.BGARefreshLayoutDelegate, OnItemClickListener, BaseView<Result<ShowBean>> {
 
     @BindView(R.id.base_bga)
     BGARefreshLayout mBgaRefreshLayout;
     @BindView(R.id.base_recycler)
     RecyclerView mRecyclerView;
-    private List<String> mList = new ArrayList<>();
+    private List<ShowBean> mList = new ArrayList<>();
     private ShowAdapter mAdapter;
-
+    private ShowPercenter mShowPercenter;
+    private int pn = 1;
     @Override
     protected int setRootView() {
         return R.layout.fragment_show;
@@ -59,39 +71,16 @@ public class ShowFragmet extends BaseFragment implements BGARefreshLayout.BGARef
     @Override
     public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
         mList.clear();
-        mList.add("张三");
-        mList.add("李四");
-        mList.add("王麻子");
-        mList.add("张三");
-        mList.add("李四");
-        mList.add("王麻子");
-        mList.add("张三");
-        mList.add("李四");
-        mList.add("王麻子");
-        mAdapter.setData(mList);
-        refreshLayout.endRefreshing();
+        pn = 1;
+        mShowPercenter.getShowList(pn);
 
     }
 
     @Override
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
-        getData();
+        pn += 1;
+        mShowPercenter.getShowList(pn);
         return false;
-    }
-
-    private void getData() {
-        mList = new ArrayList<>();
-        mList.add("张三");
-        mList.add("李四");
-        mList.add("王麻子");
-        mList.add("张三");
-        mList.add("李四");
-        mList.add("王麻子");
-        mList.add("张三");
-        mList.add("李四");
-        mList.add("王麻子");
-        mAdapter.addData(mList);
-        mBgaRefreshLayout.endLoadingMore();
     }
 
 
@@ -99,4 +88,42 @@ public class ShowFragmet extends BaseFragment implements BGARefreshLayout.BGARef
     public void OnItemClickListener(View view, int position) {
 
     }
+
+    @Override
+    public void isSuccess(Result<ShowBean> bean) {
+        if (bean.getCode() == Constans.SERVICE_SUCCESS) {
+            if (mBgaRefreshLayout.isLoadingMore())
+                mAdapter.addData(bean.getListBean());
+            else
+                mAdapter.setData(bean.getListBean());
+
+        }
+    }
+
+    @Override
+    public void isFailure(String msg) {
+        mActivity.showToast("获取数据失败，请刷新重试~");
+    }
+
+    @Override
+    public void isLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+        if (mBgaRefreshLayout.isLoadingMore())
+            mBgaRefreshLayout.endLoadingMore();
+        else
+            mBgaRefreshLayout.endRefreshing();
+
+    }
+
+    @Override
+    protected ShowPercenter createPresenter() {
+        return mShowPercenter = new ShowPercenter(this);
+    }
+
+
+
 }
