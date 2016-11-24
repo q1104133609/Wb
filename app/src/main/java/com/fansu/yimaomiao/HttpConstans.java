@@ -8,7 +8,7 @@ public class HttpConstans {
     /**
      * 短信验证
      */
-    public static final  String SEND_DXYZ = "dxyz/sendDxyz.do";
+    public static final String SEND_DXYZ = "dxyz/sendDxyz.do";
     /**
      * 注册
      */
@@ -31,4 +31,20 @@ public class HttpConstans {
      * 首页晒单
      */
     public static final String GET_SHOW_LIST = "order/pjfenye.do";
+
+    /**
+     * 首页附近人
+     */
+    public static final String GET_NEAR_PEOPLE = "user/selectjuli.do";
+
+    /**
+     * 七牛token
+     */
+    public static final String QUNIU_TOKEN = "qiniu/qiniu_token.do";
+
+    /**
+     * 更新用户地址
+     */
+    public static final String UPDATE_ADDRESS = "user/userUpdate.do";
+
 }

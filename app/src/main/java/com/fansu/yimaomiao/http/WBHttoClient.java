@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
 import okhttp3.CacheControl;
+import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -114,6 +115,7 @@ public class WBHttoClient {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
+            request.url();
             request.newBuilder()
                     .addHeader("token", SharedPreferencesUtils.getString(App.getAppContext(), Constans.TOKEN, ""))
                     .addHeader("deviceType", "ANDROID")

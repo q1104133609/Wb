@@ -2,6 +2,7 @@ package com.fansu.yimaomiao.http;
 
 
 import com.fansu.yimaomiao.HttpConstans;
+import com.fansu.yimaomiao.R;
 import com.fansu.yimaomiao.base.Result;
 import com.fansu.yimaomiao.entity.LoginBean;
 import com.fansu.yimaomiao.entity.MovieEntity;
@@ -98,16 +99,36 @@ public interface Wbm {
      * @return
      */
     @GET(HttpConstans.GET_SHOW_LIST)
-    Observable<Result<ShowBean>> getShowList(@Query("pageNo") int pageNo,@Query("pageSize") int pageSize);
+    Observable<Result<ShowBean>> getShowList(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize);
 
     /**
      * 获取附近人列表
      *
      * @return
      */
-    @GET(HttpConstans.HSHOP_INDEX)
-    Observable<Result<NearBean>> getNearList(@Query("pageNo") int pageNo,@Query("pageSize") int pageSize);
+    @GET(HttpConstans.GET_NEAR_PEOPLE)
+    Observable<Result<NearBean>> getNearList(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize
+            ,@Query("lng") String lng, @Query("lat") String lat
+            ,@Query("age") String age, @Query("sex") String sex);
+//            ,@Query("time") String time);
 
     //======================================主页4页面==================================================
+
+    //======================================其他页面==================================
+    @FormUrlEncoded
+    @POST(HttpConstans.HSHOP_INDEX)
+    Observable<Result> updateInfo();
+
+    @FormUrlEncoded
+    @POST(HttpConstans.UPDATE_ADDRESS)
+    Observable<Result> updateAddress(@Field("lng") String lng, @Field("lat") String lat,@Field("phone") String phone);
+
+
+    /**
+     * 七牛token
+     * @return
+     */
+    @POST(HttpConstans.QUNIU_TOKEN)
+    Observable<Result> getQiniuToken();
 
 }

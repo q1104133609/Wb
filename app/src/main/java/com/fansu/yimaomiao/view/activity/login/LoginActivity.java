@@ -24,7 +24,7 @@ import butterknife.OnClick;
 
 /**
  * Created by leo on 16/11/1.
- * 登录界面
+ * 登录界面aseA
  */
 
 public class LoginActivity extends MvpActivity<LoginPresenter> implements BaseView<Result<LoginBean>> {

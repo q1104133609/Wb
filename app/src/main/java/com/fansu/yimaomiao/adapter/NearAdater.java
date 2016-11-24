@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
  */
 public class NearAdater extends RecyclerView.Adapter<NearAdater.NearView> {
 
-    private List<NearBean> mList = new ArrayList<>();
+    private List<NearBean.ListBean> mList = new ArrayList<>();
     private OnItemClickListener onItemClickListener;
 
     @Override
@@ -40,10 +40,10 @@ public class NearAdater extends RecyclerView.Adapter<NearAdater.NearView> {
     @Override
     public void onBindViewHolder(final NearView holder, int position) {
         Glide.with(holder.mHead.getContext()).load("").error(R.mipmap.default_head).transform(new GlideCircleTransform(holder.mHead.getContext())).into(holder.mHead);
-//        holder.mSex.setText(mList.get(position));
-//        holder.mAge.setText(mList.get(position));
-//        holder.mTange.setText(mList.get(position));
-//        holder.mName.setText(mList.get(position));
+        holder.mSex.setText(mList.get(position).getSex());
+        holder.mAge.setText(mList.get(position).getAge());
+        holder.mTange.setText(mList.get(position).getDistance());
+        holder.mName.setText(mList.get(position).getNickname());
         if (onItemClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -56,12 +56,12 @@ public class NearAdater extends RecyclerView.Adapter<NearAdater.NearView> {
     }
 
 
-    public void setData(List<NearBean> list) {
+    public void setData(List<NearBean.ListBean> list) {
         mList = list;
         notifyDataSetChanged();
     }
 
-    public void addData(List<NearBean> list) {
+    public void addData(List<NearBean.ListBean> list) {
         mList.addAll(list);
         notifyItemRangeInserted(mList.size() - list.size(), mList.size());
     }

@@ -19,10 +19,12 @@ import com.fansu.yimaomiao.customview.BaseDialog;
 import com.fansu.yimaomiao.customview.ChoosePhotoDialog;
 import com.fansu.yimaomiao.entity.LoginBean;
 import com.fansu.yimaomiao.event.LoginEvent;
+import com.fansu.yimaomiao.event.UserInfoEvent;
 import com.fansu.yimaomiao.inter.OnDialogClickListener;
 import com.fansu.yimaomiao.utils.SharedPreferencesUtils;
 import com.fansu.yimaomiao.utils.Utils;
 import com.fansu.yimaomiao.utils.transform.GlideCircleTransform;
+import com.fansu.yimaomiao.view.activity.UserInfoActivity;
 import com.fansu.yimaomiao.view.activity.login.LoginActivity;
 import com.fansu.yimaomiao.view.activity.login.RegisterActivity;
 import com.fansu.yimaomiao.view.activity.mine.EarnPointsActivity;
@@ -97,12 +99,6 @@ public class MineFragment extends BaseFragment {
 
     }
 
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-    }
 
     /**
      * 赚积分
@@ -184,6 +180,7 @@ public class MineFragment extends BaseFragment {
      */
     @OnClick(R.id.linear_info)
     public void info() {
+        mActivity.startActivity(UserInfoActivity.class);
 
     }
 
@@ -236,7 +233,7 @@ public class MineFragment extends BaseFragment {
             linear_is_login.setVisibility(View.VISIBLE);
             mLoginBean = App.mLoginBean;
             if (mLoginBean != null) {
-                Glide.with(mActivity).load(App.mLoginBean.getUsertx()).transform(new GlideCircleTransform(mActivity))
+                Glide.with(mActivity).load(Utils.getQiniuHead(mActivity)).transform(new GlideCircleTransform(mActivity))
                         .error(R.mipmap.default_head)
                         .into(mHead);
                 mName.setText(mLoginBean.getNickname());
@@ -251,4 +248,11 @@ public class MineFragment extends BaseFragment {
         }
 
     }
+
+    //修改用户信息
+    @Subscribe
+    public void checkInfo(UserInfoEvent userInfoEvent) {
+        initUserView();
+    }
+
 }

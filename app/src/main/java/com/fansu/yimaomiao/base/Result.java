@@ -26,7 +26,7 @@ public class Result<T>  implements Serializable{
     public T bean;
     public String token;
     public int code;
-    public String pagination;
+    public T pagination;
     private List<T> listBean;
 
     public String getStatus() {
@@ -69,11 +69,11 @@ public class Result<T>  implements Serializable{
         this.code = code;
     }
 
-    public String getPagination() {
+    public T getPagination() {
         return pagination;
     }
 
-    public void setPagination(String pagination) {
+    public void setPagination(T pagination) {
         this.pagination = pagination;
     }
 

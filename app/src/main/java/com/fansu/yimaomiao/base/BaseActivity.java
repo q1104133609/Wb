@@ -49,12 +49,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         if (setRootView() != -1)
             setContentView(setRootView());
-
+        this.mContext = this;
 
         ButterKnife.bind(this);
         initView(savedInstanceState);
         AppManager.getAppManager().addActivity(this);
-        this.mContext = this;
+
         if (!EventBus.getDefault().isRegistered(this))
             EventBus.getDefault().register(this);
         initData();

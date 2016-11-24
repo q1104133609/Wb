@@ -32,11 +32,11 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mRootView = inflater.inflate(setRootView(), container, false);
+        this.mActivity = (BaseActivity) getActivity();
         builder = new KyLoadingBuilder(getActivity());
         ButterKnife.bind(this, mRootView);
         if (!EventBus.getDefault().isRegistered(this))
             EventBus.getDefault().register(this);
-        this.mActivity = (BaseActivity) getActivity();
         initView(savedInstanceState);
         return mRootView;
     }

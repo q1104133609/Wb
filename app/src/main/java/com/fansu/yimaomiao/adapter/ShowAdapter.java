@@ -13,6 +13,7 @@ import com.fansu.yimaomiao.R;
 import com.fansu.yimaomiao.entity.ShowBean;
 import com.fansu.yimaomiao.inter.OnItemClickListener;
 import com.fansu.yimaomiao.utils.transform.GlideCircleTransform;
+import com.fansu.yimaomiao.utils.transform.GlideRotateTransformation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ import butterknife.ButterKnife;
 
 public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowView> {
 
-    private List<ShowBean> mList = new ArrayList<>();
+    private List<ShowBean.ListBean> mList = new ArrayList<>();
     private OnItemClickListener onItemClickListener;
 
 
@@ -42,20 +43,20 @@ public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowView> {
             holder.mImage_Content1.setVisibility(View.VISIBLE);
             holder.mImage_Content2.setVisibility(View.VISIBLE);
             holder.mImage_Content.setVisibility(View.VISIBLE);
-            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupian2()).error(R.mipmap.default_photo).transform(new GlideCircleTransform(holder.mHead.getContext())).into(holder.mImage_Content1);
-            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupain3()).error(R.mipmap.default_photo).transform(new GlideCircleTransform(holder.mHead.getContext())).into(holder.mImage_Content2);
-            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupian1()).error(R.mipmap.default_photo).transform(new GlideCircleTransform(holder.mHead.getContext())).into(holder.mImage_Content);
+            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupian2()).error(R.mipmap.default_photo).transform(new GlideRotateTransformation(holder.mHead.getContext(),8)).into(holder.mImage_Content1);
+            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupain3()).error(R.mipmap.default_photo).transform(new GlideRotateTransformation(holder.mHead.getContext(),8)).into(holder.mImage_Content2);
+            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupian1()).error(R.mipmap.default_photo).transform(new GlideRotateTransformation(holder.mHead.getContext(),8)).into(holder.mImage_Content);
         } else if (!TextUtils.isEmpty(mList.get(position).getTupian1()) && !TextUtils.isEmpty(mList.get(position).getTupian1())) {
             holder.mImage_Content1.setVisibility(View.VISIBLE);
             holder.mImage_Content2.setVisibility(View.GONE);
             holder.mImage_Content.setVisibility(View.VISIBLE);
-            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupian2()).error(R.mipmap.default_photo).transform(new GlideCircleTransform(holder.mHead.getContext())).into(holder.mImage_Content1);
-            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupian1()).error(R.mipmap.default_photo).transform(new GlideCircleTransform(holder.mHead.getContext())).into(holder.mImage_Content);
+            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupian2()).error(R.mipmap.default_photo).transform(new GlideRotateTransformation(holder.mHead.getContext(),8)).into(holder.mImage_Content1);
+            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupian1()).error(R.mipmap.default_photo).transform(new GlideRotateTransformation(holder.mHead.getContext(),8)).into(holder.mImage_Content);
         } else if (!TextUtils.isEmpty(mList.get(position).getTupian1())) {
             holder.mImage_Content1.setVisibility(View.GONE);
             holder.mImage_Content2.setVisibility(View.GONE);
             holder.mImage_Content.setVisibility(View.VISIBLE);
-            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupian1()).error(R.mipmap.default_photo).transform(new GlideCircleTransform(holder.mHead.getContext())).into(holder.mImage_Content);
+            Glide.with(holder.mHead.getContext()).load(mList.get(position).getTupian1()).error(R.mipmap.default_photo).transform(new GlideRotateTransformation(holder.mHead.getContext(),8)).into(holder.mImage_Content);
         }else{
             holder.mImage_Content1.setVisibility(View.GONE);
             holder.mImage_Content2.setVisibility(View.GONE);
@@ -82,12 +83,12 @@ public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowView> {
     }
 
 
-    public void setData(List<ShowBean> list) {
+    public void setData(List<ShowBean.ListBean> list) {
         mList = list;
         notifyDataSetChanged();
     }
 
-    public void addData(List<ShowBean> list) {
+    public void addData(List<ShowBean.ListBean> list) {
         mList.addAll(list);
         notifyItemRangeInserted(mList.size() - list.size(), mList.size());
     }

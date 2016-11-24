@@ -1,5 +1,6 @@
 package com.fansu.yimaomiao.presenter.home;
 
+import com.fansu.yimaomiao.Constans;
 import com.fansu.yimaomiao.base.Result;
 import com.fansu.yimaomiao.base.mvp.ApiCallback;
 import com.fansu.yimaomiao.base.mvp.BasePresenter;
@@ -13,15 +14,15 @@ import com.fansu.yimaomiao.view.fragment.main.NearFragment;
 /**
  * Created by huangbo on 16/11/19.
  */
-public class NearPercenter extends BasePresenter<BaseView<Result<NearBean>>>{
+public class NearPercenter extends BasePresenter<BaseView<Result<NearBean>>> {
 
     public NearPercenter(BaseView<Result<NearBean>> view) {
         attachView(view);
     }
 
-    public void getNearPeole(){
+    public void getNearPeole(int pn, String lng, String lan, String age, String sex, String time) {
         mvpView.isLoading();
-        addSubscription(wbm.create(Wbm.class).getNearList(0,0), new SubscriberCallBack<>(new ApiCallback<Result<NearBean>>() {
+        addSubscription(wbm.create(Wbm.class).getNearList(pn, Constans.PAGE_SIZE, lng, lan, age, sex), new SubscriberCallBack<>(new ApiCallback<Result<NearBean>>() {
             @Override
             public void onSuccess(Result<NearBean> registerBeanResult) {
                 mvpView.isSuccess(registerBeanResult);

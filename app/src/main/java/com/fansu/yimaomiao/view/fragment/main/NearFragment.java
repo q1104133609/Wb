@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -17,20 +16,19 @@ import com.fansu.yimaomiao.base.Result;
 import com.fansu.yimaomiao.base.mvp.BaseView;
 import com.fansu.yimaomiao.base.mvp.MvpFagment;
 import com.fansu.yimaomiao.entity.NearBean;
+import com.fansu.yimaomiao.http.WBService;
+import com.fansu.yimaomiao.http.Wbm;
 import com.fansu.yimaomiao.inter.OnItemClickListener;
 import com.fansu.yimaomiao.presenter.home.NearPercenter;
+import com.fansu.yimaomiao.utils.SharedPreferencesUtils;
 import com.fansu.yimaomiao.utils.Utils;
 import com.tbruyelle.rxpermissions.RxPermissions;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import butterknife.BindView;
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 import cn.bingoogolapple.refreshlayout.BGARefreshViewHolder;
+import rx.Subscriber;
 
 
 /**
@@ -42,7 +40,6 @@ public class NearFragment extends MvpFagment<NearPercenter> implements BGARefres
     BGARefreshLayout mBgaRefreshLayout;
     @BindView(R.id.base_recycler)
     RecyclerView mRecyclerView;
-    private List<String> mList = new ArrayList<>();
     private NearAdater mAdapter;
     private int pn = 1;
     private String lat;
@@ -50,6 +47,8 @@ public class NearFragment extends MvpFagment<NearPercenter> implements BGARefres
     private NearLocationListener mListener = new NearLocationListener();
     public LocationClient mLocationClient = null;
     private NearPercenter mNearPercenter;
+    private String mSex = "女", mAge = "18", mTime = "";
+    private boolean isFirstNear;
 
     @Override
     protected int setRootView() {
@@ -63,7 +62,7 @@ public class NearFragment extends MvpFagment<NearPercenter> implements BGARefres
         RxPermissions rxPermissions = new RxPermissions(mActivity);
         rxPermissions
                 .request(Manifest.permission.ACCESS_COARSE_LOCATION
-                        ,Manifest.permission.ACCESS_FINE_LOCATION)
+                        , Manifest.permission.ACCESS_FINE_LOCATION)
                 .subscribe(granted -> {
                     if (granted) {
                         Utils.initLocation(mActivity, mLocationClient, mListener, 4000);
@@ -90,14 +89,14 @@ public class NearFragment extends MvpFagment<NearPercenter> implements BGARefres
     @Override
     public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
         pn = 1;
-        mNearPercenter.getNearPeole();
+        mNearPercenter.getNearPeole(pn, lon, lat, mAge, mSex, mTime);
 
     }
 
     @Override
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
         pn += 1;
-        mNearPercenter.getNearPeole();
+        mNearPercenter.getNearPeole(pn, lon, lat, mAge, mSex, mTime);
         return true;
     }
 
@@ -110,10 +109,14 @@ public class NearFragment extends MvpFagment<NearPercenter> implements BGARefres
     @Override
     public void isSuccess(Result<NearBean> bean) {
         if (bean.getCode() == Constans.SERVICE_SUCCESS) {
-            if (mBgaRefreshLayout.isLoadingMore()) {
-                mAdapter.addData(bean.getListBean());
+            if (pn > 1) {
+                if (bean.getPagination().getLastPage() >= pn) {
+                    mAdapter.addData(bean.getPagination().getList());
+                } else {
+                    mActivity.showToast("没有更多数据了哟~");
+                }
             } else {
-                mAdapter.setData(bean.getListBean());
+                mAdapter.setData(bean.getPagination().getList());
             }
 
         }
@@ -133,7 +136,7 @@ public class NearFragment extends MvpFagment<NearPercenter> implements BGARefres
 
     @Override
     public void hideLoading() {
-        if (mBgaRefreshLayout.isLoadingMore()) {
+        if (pn > 1) {
             mBgaRefreshLayout.endLoadingMore();
         } else {
             mBgaRefreshLayout.endRefreshing();
@@ -156,7 +159,37 @@ public class NearFragment extends MvpFagment<NearPercenter> implements BGARefres
             //Receive Location
             lat = String.valueOf(location.getLatitude());
             lon = String.valueOf(location.getLongitude());
+            //第一次获取更新地址
+            if (!isFirstNear) {
+                isFirstNear = true;
+                updateAddress();
+            }
 
+        }
+    }
+
+
+    /**
+     * 更新用户地址
+     */
+    public void updateAddress() {
+        if (Utils.checkLoginNo(mActivity)) {
+            WBService.getService().create(Wbm.class).updateAddress(lon, lat, SharedPreferencesUtils.getString(mActivity, Constans.USER_NAME, "")).subscribe(new Subscriber<Result>() {
+                @Override
+                public void onCompleted() {
+
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onNext(Result result) {
+
+                }
+            });
         }
     }
 }

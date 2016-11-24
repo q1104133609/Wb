@@ -1,6 +1,13 @@
 package com.fansu.yimaomiao.utils;
 
+import android.graphics.Bitmap;
+
+import com.blankj.utilcode.utils.ImageUtils;
 import com.blankj.utilcode.utils.LogUtils;
+import com.fansu.yimaomiao.Constans;
+import com.fansu.yimaomiao.base.Result;
+import com.fansu.yimaomiao.http.WBService;
+import com.fansu.yimaomiao.http.Wbm;
 import com.fansu.yimaomiao.inter.OnQiuNiuListener;
 import com.qiniu.android.common.Zone;
 import com.qiniu.android.storage.Configuration;
@@ -8,7 +15,12 @@ import com.qiniu.android.storage.UpCancellationSignal;
 import com.qiniu.android.storage.UploadManager;
 import com.qiniu.android.storage.UploadOptions;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by leo on 16/11/7.
@@ -50,6 +62,39 @@ public class QNUtils {
         uploadManager = new UploadManager(config);
     }
 
+
+    public void upLoadSingleFile(Bitmap bitmap, String key, OnQiuNiuListener qiuNiuListener) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 10, stream);
+        byte[] byteArray = stream.toByteArray();
+        WBService
+                .getService()
+                .create(Wbm.class)
+                .getQiniuToken()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Result>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        qiuNiuListener.isFlld("上传失败请重新选择图片~");
+
+                    }
+
+                    @Override
+                    public void onNext(Result result) {
+                        upLoadFileProgress(byteArray, key+ Constans.PHOEO_TYPE, result.bean.toString(), qiuNiuListener);
+
+                    }
+                });
+    }
+
+
+    //====================七牛sdk====================================================
 
     public void upLoadFileProgress(byte[] data, String key, String token, OnQiuNiuListener qiuNiuListener) {
         UploadManager uploadManager = new UploadManager();

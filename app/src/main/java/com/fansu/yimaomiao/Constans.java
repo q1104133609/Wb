@@ -24,6 +24,16 @@ public class Constans {
     public static final int ERWEIMA_IMAGE_CODE = 251;
     //日志
     public static final String TGA = "huangbo";
+    //BASE64加密钥匙
+    public static final int BASEKEY = 123456;
+
+    //七牛空间地址
+    public static final String QINIU_LOCATION = "http://og9mwmppo.bkt.clouddn.com/";
+
+    /**
+     * 图片格式
+     */
+    public static final String PHOEO_TYPE = ".png";
 
     /**
      * 每页8个
@@ -65,7 +75,6 @@ public class Constans {
      * 用户信息
      */
     public static final String USER_INFO = "userinfo";
-
 
 
     //===================shareperface=====================

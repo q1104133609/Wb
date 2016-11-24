@@ -43,32 +43,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        //轮播图页面
         <activity android:name=".view.activity.login.CarouselActivity"
             android:theme="@style/AppThemeTwo"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
+        //积分页面
         <activity android:name=".view.activity.mine.EarnPointsActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
+        //忘记密码页面
         <activity android:name=".view.activity.login.RetrievePwdActvity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
+        //登录界面
         <activity android:name=".view.activity.login.LoginActivity"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait">
         </activity>
+        //注册界面
         <activity android:name=".view.activity.login.RegisterActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
+        //主页面
         <activity android:name=".view.activity.MainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
+        //聊天界面
         <activity android:name=".view.activity.ease.ChatActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
+
+        //用户详情界面
+        <activity android:name=".view.activity.UserInfoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        //====================easeui 页面=======================================
         <activity android:name="com.easemob.easeui.ui.EaseBaiduMapActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
@@ -81,7 +94,7 @@
         <activity android:name="com.easemob.easeui.ui.EaseShowNormalFileActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
-
+        //====================easeui 页面=======================================
 
         <!--分享 -->
         <activity

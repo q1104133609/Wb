@@ -15,6 +15,8 @@ import com.fansu.yimaomiao.base.Result;
 import com.fansu.yimaomiao.base.mvp.BaseView;
 import com.fansu.yimaomiao.base.mvp.MvpFagment;
 import com.fansu.yimaomiao.entity.ShowBean;
+import com.fansu.yimaomiao.http.WBService;
+import com.fansu.yimaomiao.http.Wbm;
 import com.fansu.yimaomiao.inter.OnItemClickListener;
 import com.fansu.yimaomiao.presenter.home.ShowPercenter;
 
@@ -27,6 +29,7 @@ import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 import cn.bingoogolapple.refreshlayout.BGARefreshViewHolder;
 import cn.finalteam.galleryfinal.GalleryFinal;
 import cn.finalteam.galleryfinal.model.PhotoInfo;
+import rx.Subscriber;
 
 import static com.fansu.yimaomiao.App.city;
 
@@ -44,6 +47,8 @@ public class ShowFragmet extends MvpFagment<ShowPercenter> implements BGARefresh
     private ShowAdapter mAdapter;
     private ShowPercenter mShowPercenter;
     private int pn = 1;
+
+
     @Override
     protected int setRootView() {
         return R.layout.fragment_show;
@@ -80,7 +85,7 @@ public class ShowFragmet extends MvpFagment<ShowPercenter> implements BGARefresh
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
         pn += 1;
         mShowPercenter.getShowList(pn);
-        return false;
+        return true;
     }
 
 
@@ -92,10 +97,15 @@ public class ShowFragmet extends MvpFagment<ShowPercenter> implements BGARefresh
     @Override
     public void isSuccess(Result<ShowBean> bean) {
         if (bean.getCode() == Constans.SERVICE_SUCCESS) {
-            if (mBgaRefreshLayout.isLoadingMore())
-                mAdapter.addData(bean.getListBean());
-            else
-                mAdapter.setData(bean.getListBean());
+            if (pn > 1) {
+                if (bean.getPagination().getLastPage() >= pn) {
+                    mAdapter.addData(bean.getPagination().getList());
+                } else {
+                    mActivity.showToast("没有更多数据了哟~");
+                }
+            } else {
+                mAdapter.setData(bean.getPagination().getList());
+            }
 
         }
     }
@@ -112,10 +122,11 @@ public class ShowFragmet extends MvpFagment<ShowPercenter> implements BGARefresh
 
     @Override
     public void hideLoading() {
-        if (mBgaRefreshLayout.isLoadingMore())
+        if (pn > 1) {
             mBgaRefreshLayout.endLoadingMore();
-        else
+        } else {
             mBgaRefreshLayout.endRefreshing();
+        }
 
     }
 
@@ -123,7 +134,6 @@ public class ShowFragmet extends MvpFagment<ShowPercenter> implements BGARefresh
     protected ShowPercenter createPresenter() {
         return mShowPercenter = new ShowPercenter(this);
     }
-
 
 
 }
